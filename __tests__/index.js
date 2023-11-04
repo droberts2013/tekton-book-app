@@ -35,24 +35,24 @@ describe("Test the `Add` API", () => {
   });
 });
 
-describe("Test the `Substract` API", () => {
+describe("Test the `Subtract` API", () => {
   test("No parameters should return a 404", async () => {
-    const response = await request(app).get("/substract");
+    const response = await request(app).get("/subtract");
     expect(response.statusCode).toBe(404);
   });
   
   test("One parameters should return a 404", async () => {
-    const response = await request(app).get("/substract/1");
+    const response = await request(app).get("/subtract/1");
     expect(response.statusCode).toBe(404);
   });
   
   test("Two parameters should return a 200", async () => {
-    const response = await request(app).get("/substract/1/2");
+    const response = await request(app).get("/subtract/1/2");
     expect(response.statusCode).toBe(200);
   });
   
   test("It should substract the two paramters", async () => {
-    const response = await request(app).get("/substract/5/2");
+    const response = await request(app).get("/subtract/5/2");
     expect(response.body.result).toBe(3);
   });
 });
