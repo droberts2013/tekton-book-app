@@ -16,4 +16,9 @@ app.get("/subtract/:minuend/:subtrahend", (req, res) => {
   res.send({ result }).status(200);
 });
 
+app.get("/multiply/:factor1/:factor2", (req, res) => {
+  const result = parseInt(req.params.factor1, 10) * parseInt(req.params.factor2, 10);
+  res.send({ result }).status(200);
+});
+
 module.exports = app;
